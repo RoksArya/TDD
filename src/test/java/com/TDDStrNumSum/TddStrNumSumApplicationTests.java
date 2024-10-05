@@ -48,8 +48,16 @@ class TddStrNumSumApplicationTests {
 	@Order(4)
 	@DisplayName("Test Multiple Numbers for \\n")
 	void TestSlashN() {
-		String str = "1,2,3,\n";
-		assertEquals(6, strSumService.add(str));
+		String str = "1,2,23,\n";
+		assertEquals(26, strSumService.add(str));
+	}
+	
+	@Test
+	@Order(5)
+	@DisplayName("Test Negative Numbers")
+	void TestNegative() {
+		String str = "1,22,33,-43,67";
+		assertEquals(80,strSumService.add(str));
 	}
 	
 
