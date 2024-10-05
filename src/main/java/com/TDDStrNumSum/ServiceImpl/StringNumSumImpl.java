@@ -10,7 +10,8 @@ public class StringNumSumImpl implements StringSumService {
 	@Override
 	public int add(String str) {
 		if(str.length()==0) return 0;
-		return Integer.parseInt(str);
+		String[] splitStr = str.split(",");
+		return Integer.parseInt(splitStr[0]) + Integer.parseInt(splitStr[1]);
 	}
 
 }

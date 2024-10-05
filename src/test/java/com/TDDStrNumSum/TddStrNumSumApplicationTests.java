@@ -36,7 +36,7 @@ class TddStrNumSumApplicationTests {
 	@DisplayName("Test Two Number")
 	void TestTwoNumberStr() {
 		String str = "1,2";
-		assertEquals(0,strSumService.add(str));
+		assertEquals(3,strSumService.add(str));
 	}
 
 }
