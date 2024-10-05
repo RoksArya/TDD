@@ -66,6 +66,16 @@ class TddStrNumSumApplicationTests {
 		
 	}
 	
+	@Test
+	@Order(6)
+	@DisplayName("Test Delimeters")
+	void Testdelimeters() {
+		String str = "1,22,33,//;\n1,43,67";
+		assertEquals(167,strSumService.add(str));
+		
+	}
+	
+	
 	
 	
 
