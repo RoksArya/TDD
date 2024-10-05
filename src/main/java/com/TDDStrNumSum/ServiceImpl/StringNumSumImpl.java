@@ -11,7 +11,9 @@ public class StringNumSumImpl implements StringSumService {
 	public int add(String str) {
 		if(str.length()==0) return 0;
 		String[] splitStr = str.split(",");
-		return Integer.parseInt(splitStr[0]) + Integer.parseInt(splitStr[1]);
+		int sum = 0;
+		for(String num: splitStr) sum += Integer.parseInt(num);
+		return sum;
 	}
 
 }
