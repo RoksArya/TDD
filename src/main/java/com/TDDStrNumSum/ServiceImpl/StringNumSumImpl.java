@@ -1,5 +1,8 @@
 package com.TDDStrNumSum.ServiceImpl;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.springframework.stereotype.Service;
 
 import com.TDDStrNumSum.Service.StringSumService;
@@ -10,9 +13,10 @@ public class StringNumSumImpl implements StringSumService {
 	@Override
 	public int add(String str) {
 		if(str.length()==0) return 0;
-		String[] splitStr = str.split(",");
+		Pattern pattern = Pattern.compile("\\d+");
+		Matcher matcher = pattern.matcher(str);
 		int sum = 0;
-		for(String num: splitStr) sum += Integer.parseInt(num);
+		while(matcher.find()) sum += Integer.parseInt(matcher.group());
 		return sum;
 	}
 
