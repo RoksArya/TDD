@@ -11,7 +11,7 @@ import com.TDDStrNumSum.Service.StringSumService;
 public class StringNumSumImpl implements StringSumService {
 	
 	@Override
-	public int add(String str) {
+	public int add(String str)  {
 		if(str.length()==0) return 0;
 		if(str.contains("-")) {
 			Pattern pattern = Pattern.compile("-\\d+");
@@ -23,7 +23,11 @@ public class StringNumSumImpl implements StringSumService {
 		Pattern pattern = Pattern.compile("\\d+");
 		Matcher matcher = pattern.matcher(str);
 		int sum = 0;
-		while(matcher.find()) sum += Integer.parseInt(matcher.group().trim());
+		while(matcher.find()) 
+			{
+			System.out.println(matcher.group());
+			sum += Integer.parseInt(matcher.group().trim());
+			}
 		return sum;
 	}
 
