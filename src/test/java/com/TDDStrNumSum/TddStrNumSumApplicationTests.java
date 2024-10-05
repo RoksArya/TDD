@@ -1,6 +1,8 @@
 package com.TDDStrNumSum;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer;
@@ -57,8 +59,14 @@ class TddStrNumSumApplicationTests {
 	@DisplayName("Test Negative Numbers")
 	void TestNegative() {
 		String str = "1,22,33,-43,67";
-		assertEquals(80,strSumService.add(str));
+		IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () ->{
+			strSumService.add(str);
+		});
+		assertTrue(thrown.getMessage().contains("negative numbers not allowed"));
+		
 	}
+	
+	
 	
 
 }

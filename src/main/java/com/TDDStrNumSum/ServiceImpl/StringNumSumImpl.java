@@ -23,7 +23,7 @@ public class StringNumSumImpl implements StringSumService {
 		Pattern pattern = Pattern.compile("\\d+");
 		Matcher matcher = pattern.matcher(str);
 		int sum = 0;
-		while(matcher.find()) sum += Integer.parseInt(matcher.group());
+		while(matcher.find()) sum += Integer.parseInt(matcher.group().trim());
 		return sum;
 	}
 
